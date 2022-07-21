@@ -34,10 +34,8 @@ jobs:
         git config --global user.name "jubayerarefin"
     - name: Install SSH Client
       uses: webfactory/ssh-agent@v0.5.4 # This step installs the ssh client into the workflow run. There's many options available for this on the action marketplace.
-      env:
-          KEY_PEM: ssh-keygen -p -f ${{ secrets.Deploy_Key_Private }} -m pem
       with:        
-        ssh-private-key: ${{ env.KEY_PEM }} #${{ secrets.Deploy_Key_Private }}
+        ssh-private-key: ${{ secrets.Deploy_Key_Private }}
     - name: Set ENV & Deploy Website
       env:
         GIT_USER: 'jubayerarefin'
