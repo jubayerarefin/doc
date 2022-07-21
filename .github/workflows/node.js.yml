@@ -33,7 +33,7 @@ jobs:
         git config --global user.email "jubayerarefin@users.noreply.github.com"
         git config --global user.name "jubayerarefin"
     - name: Install SSH Client
-      uses: webfactory/ssh-agent@v0.2.0 # This step installs the ssh client into the workflow run. There's many options available for this on the action marketplace.
+      uses: webfactory/ssh-agent@v0.5.4 # This step installs the ssh client into the workflow run. There's many options available for this on the action marketplace.
       with:
         ssh-private-key: ${{ secrets.Deploy_Key_Private }}
     - name: Set ENV & Deploy Website
